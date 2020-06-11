@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Quidax Book Club</title>
 </head>
 <body>
     <nav id="nav-bar">
-        <div>
+        <div id="nav-left">
             <!-- change for logo img later -->
-            Logo
+            <div id="logo-container">
+                <img src="/images/books-outline.png" alt="" srcset="">       
+            </div>
             <div>
-                <p>Quidax Book Club</p>
+                <strong><p>Quidax Book Club</p></strong>
                 <p>Admin</p>
             </div>
         </div>
@@ -20,31 +22,39 @@
             <input type="text" name="search" id="search-input">
             <!-- Fontawesome icon for search -->
         </div>
-        <!-- Image for shelf -->
-        <image></image>
+        <div id="nav-right">
+            <img src="/images/books.png" alt="" srcset="">       
+        </div>
     </nav>
     <main>
         <section id="side-bar">
-            <ul>
-                <li>Home</li>
-                <li>Profile</li>
-                <li>Notifications</li><span>3</span>
-            </ul>
-            <hr>
-            <p>Explore</p>
-            <ul>
-                <li>Books</li>
-                <li>Genres</li>
-                <li>Authors</li>
-            </ul>
-            <hr>
-            <p>My Books</p>
-            <ul>
-                <li>Queued</li>
-                <li>Currently Borrowed</li>
-                <li>Favorites</li>
-                <li>History</li>
-            </ul>
+            <div id="pages">
+                <ul>
+                    <li>Home</li>
+                    <li>Profile</li>
+                    <li>Notifications <span>3</span></li>
+                </ul>
+            </div>
+            <div id="explore">
+                <p>Explore</p>
+                <ul>
+                    <li>Books</li>
+                    <li>Genres</li>
+                    <li>Authors</li>
+                </ul>
+            </div>
+            <div id="my-books">
+                <p>My Books</p>
+                <ul>
+                    <li>Queued</li>
+                    <li>Currently Borrowed</li>
+                    <li>Favorites</li>
+                    <li>History</li>
+                </ul>
+            </div>
+            <div>
+                <p>Admin</p>
+            </div>
         </section>
         <section id="main-page">
             <section id="carousel">
@@ -52,12 +62,15 @@
                 <!-- Implement Carousel -->
             </section>
             <section id="recently-added">
+                <p>RECENTLY ADDED</p>
                 <!-- render books here -->
             </section>
             <section id="all-books">
                 <!-- Implement Carousel -->
+                <p>ALL BOOKS</p>
             </section>
         </section>
     </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
