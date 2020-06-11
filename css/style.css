@@ -1,19 +1,26 @@
 /* Font family */
 @font-face {
-    font-family: avenirNext;
-    src: url(../fonts/AvenirNextLTPro-Regular.otf);
+    font-family: diodrum;
+    src: url(../fonts/DiodrumRegular.otf);
+    font-weight: normal;
 }
 @font-face {
-    font-family: avenirNext;
-    src: url(../fonts/AvenirNextLTPro-Bold.otf);
+    font-family: diodrum;
+    src: url(../fonts/DiodrumMedium.otf);
     font-weight: bold;
 }
+@font-face {
+    font-family: diodrum;
+    src: url(../fonts/DiodrumBold.otf);
+    font-weight: 900;
+}
 
-/* BODY STYLES */
+/* GENERAL STYLING */
 * {
     margin: 0;
     padding: 0;
-    font-family: avenirNext;
+    font-family: diodrum;
+    font-weight: normal;
 }
 hr.sidebar-hr{
     border-top: 0.1px solid #eaeaea;
@@ -23,18 +30,34 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
+}
+/* Links */
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: #65C100;
+}
+/* BODY STYLES */
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100vw;
     height: 100px;
     border-bottom: 1px solid #eaeaea;
-    padding: 0 2rem 0 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    z-index: 2;
 }
 #nav-left{
     display: flex;
     align-items: center;
+    margin: 0 0 0 2rem;
+}
+#quidax-book{
+    font-weight: bold;
 }
 #logo-container{
     display: flex;
@@ -51,30 +74,37 @@ nav{
 }
 #nav-right{
     width: 50px;
+    margin: 0 2rem 0 0;
 }
 #nav-right img{
     width: 50%;
 }
-main{
+#admin-title{
+    color: #B5B5B5;
+    font-size: .75rem;
+}
+mains{
     display: flex;
     flex-direction: row;
 }
 #side-bar{
-    width: 18rem;
+    width: 20rem;
     height: Calc(100vh - 100px);
     box-shadow: 10px 0 30px -2px #52525213;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 100px 0 0 0;
+    z-index: 1;
 }
 #side-bar>div{
     border-bottom: 1px solid #eaeaea;
-    padding: 0 0 0 2rem;
+    padding: 0 2rem 0 2rem;
     font-size: .85rem;
 }
 #side-bar div p{
-    font-weight: 600;
+    font-weight: 900;
     margin: 1rem 0 2rem 0;
 }
 #side-bar ul{
@@ -83,7 +113,51 @@ main{
 #side-bar ul li{
     margin: .5rem .5rem .5rem 0;
 }
-
+#notifications{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+#notifications span{
+    background-color: #65C100;
+    width: 1.5rem;
+    height: 1rem;
+    border-radius: 0.75rem;
+    color: #fff;
+}
+.active-link{
+    color: #65C100;
+}
+#search-div{
+    display: flex;
+}
+#search-div div{
+    height: 2.5rem;
+    width: 2.5rem;
+    border:1px solid #DDDDDD;
+    border-left: 0;
+    background-color: #F9F9FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#search-input{
+    height: 2.5rem;
+    width: 40vw;
+    border: 1px solid #DDDDDD;
+    padding: 0 10px 0 10px;
+}
+/* Main page styles */
 #main-page{
-    padding: 0 0 0 20rem;
+    padding: 110px 0 0 22rem;
+    font-size: .9rem;
+}
+/* ALL BOOKS SECTION */
+.all-books-section{
+    display: flex;
+}   
+
+.book-image img{
+    width: 200px
 }

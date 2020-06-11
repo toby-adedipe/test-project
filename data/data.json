@@ -10,7 +10,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "images": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpeg"
     },
     {
         "id": "1",
@@ -23,7 +23,7 @@
         "availability": "Available",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "recentlyAdded",
-        "images": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg"
     },
     {
         "id": "2",
@@ -36,7 +36,7 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "recentlyAdded",
-        "images": "images/builtToLast.jpg"
+        "image": "images/builtToLast.jpg"
 
     },
     {
@@ -50,7 +50,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "images": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg"
     },
     {
         "id": "4",
@@ -63,7 +63,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "images": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg"
     },
     {
         "id": "5",
@@ -76,7 +76,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpg"
     },
     {
         "id": "6",
@@ -89,7 +89,7 @@
         "availability": "Available",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "none",
-        "images": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg"
     },
     {
         "id": "7",
@@ -102,7 +102,7 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "none",
-        "images": "images/builtToLast.jpg"
+        "image": "images/builtToLast.jpg"
 
     },
     {
@@ -116,7 +116,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg"
     },
     {
         "id": "9",
@@ -129,7 +129,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg"
     },
     {
         "id": "10",
@@ -142,7 +142,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpg"
     },
     {
         "id": "11",
@@ -155,7 +155,7 @@
         "availability": "Available",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "none",
-        "images": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg"
     },
     {
         "id": "12",
@@ -168,7 +168,7 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "none",
-        "images": "images/builtToLast.jpg"
+        "image": "images/builtToLast.jpg"
 
     },
     {
@@ -182,7 +182,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg"
     },
     {
         "id": "14",
@@ -195,6 +195,6 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "images": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg"
     }
 ]

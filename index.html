@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2415de6df2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Quidax Book Club</title>
 </head>
 <body>
     <nav id="nav-bar">
         <div id="nav-left">
-            <!-- change for logo img later -->
             <div id="logo-container">
                 <img src="/images/books-outline.png" alt="" srcset="">       
             </div>
             <div>
-                <strong><p>Quidax Book Club</p></strong>
-                <p>Admin</p>
+                <p id="quidax-book">Quidax Book Club</p>
+                <p id="admin-title">Admin</p>
             </div>
         </div>
-        <div>
-            <input type="text" name="search" id="search-input">
+        <div id="search-div">
+            <input type="text" name="search" id="search-input" placeholder="Search Books, genres, authors, etc">
+            <div><i class="fa fa-search" aria-hidden="true"></i></div>
             <!-- Fontawesome icon for search -->
         </div>
         <div id="nav-right">
@@ -30,9 +31,9 @@
         <section id="side-bar">
             <div id="pages">
                 <ul>
-                    <li>Home</li>
-                    <li>Profile</li>
-                    <li>Notifications <span>3</span></li>
+                    <li><a href="/" class=" ">Home</a></li>
+                    <li><a href="#" class=" ">Profile</a></li>
+                    <li id="notifications"><a href="#" class=" ">Notifications </a><span>3</span></li>
                 </ul>
             </div>
             <div id="explore">
@@ -61,13 +62,19 @@
                 <p>Featured Books</p>
                 <!-- Implement Carousel -->
             </section>
-            <section id="recently-added">
+            <section id="recent-section">
                 <p>RECENTLY ADDED</p>
                 <!-- render books here -->
+                <div id="recently-added">
+
+                </div>
             </section>
-            <section id="all-books">
+            <section id="all-books-section">
                 <!-- Implement Carousel -->
                 <p>ALL BOOKS</p>
+                <div id="all-books">
+
+                </div>
             </section>
         </section>
     </main>
