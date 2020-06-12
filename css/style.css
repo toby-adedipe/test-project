@@ -186,7 +186,7 @@ mains{
 .carousel-cell{
     margin: 0 1rem 1rem 0;
 }
-.carousel-cell div{
+.carousel-cell>div{
     margin: 0 1rem 1rem 0;
 
 }
@@ -199,12 +199,26 @@ mains{
     background-size: cover;
 }
 .carousel-background{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
+    font-size: .75rem;
     color: #fff;
     background: rgb(84,84,84);
     background: linear-gradient(180deg, rgba(84,84,84,.4) 0%, rgba(2,2,2,.9) 60%, rgba(0,0,0,1) .9%);
 }
+.carousel-background>div, .carousel-background>p{
+    margin: 0 0 20px 15px;
+}
+.carousel-images .carousel-background{
+    visibility: hidden;
+}
+.carousel-images:hover .carousel-background{
+    visibility: visible;
+}
+
 #recently-added, #all-books{
     display: grid;
     grid-gap: 0.5rem;

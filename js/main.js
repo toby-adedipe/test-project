@@ -78,11 +78,13 @@ function renderCarousel (book){
         <div class="ratings-section">
           <div class="ratings-section-ratings">
             <p>Ratings: ${book.ratings}</p>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star empty" aria-hidden="true"></i>
+            <div>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star empty" aria-hidden="true"></i>
+            </div>
           </div>
           <div class="ratings-section-likes">
             <div>
