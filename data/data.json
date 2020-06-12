@@ -1,7 +1,7 @@
 [
     {
         "id": "0",
-        "title": "The Efective Engineer",
+        "title": "The Effective Engineer",
         "authors": ["Edmond Lau"],
         "yearPublished": "2009",
         "ratings": "4.0",
@@ -10,7 +10,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "image": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "1",
@@ -23,7 +24,8 @@
         "availability": "Borrowed Out",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "recentlyAdded",
-        "image": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "2",
@@ -36,7 +38,8 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "recentlyAdded",
-        "image": "images/builtToLast.jpg"
+        "image": "images/builtToLast.jpg",
+        "labels": ["Creative", "Self-help"]
 
     },
     {
@@ -50,7 +53,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "image": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "4",
@@ -63,11 +67,12 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "image": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "5",
-        "title": "The Efective Engineer",
+        "title": "The Effective Engineer",
         "authors": ["Edmond Lau"],
         "yearPublished": "2009",
         "ratings": "4.0",
@@ -76,7 +81,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "6",
@@ -89,7 +95,8 @@
         "availability": "Borrowed Out",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "none",
-        "image": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "7",
@@ -102,8 +109,8 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "none",
-        "image": "images/builtToLast.jpg"
-
+        "image": "images/builtToLast.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "8",
@@ -116,7 +123,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "9",
@@ -129,11 +137,12 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "10",
-        "title": "The Efective Engineer",
+        "title": "The Effective Engineer",
         "authors": ["Edmond Lau"],
         "yearPublished": "2009",
         "ratings": "4.0",
@@ -142,7 +151,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/theEffectiveEngineer.jpg"
+        "image": "images/theEffectiveEngineer.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "11",
@@ -155,7 +165,8 @@
         "availability": "Available",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "none",
-        "image": "images/theLeanStartup.jpg"
+        "image": "images/theLeanStartup.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "12",
@@ -168,8 +179,8 @@
         "availability": "Available",
         "category": ["Business"],
         "shelf": "none",
-        "image": "images/builtToLast.jpg"
-
+        "image": "images/builtToLast.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "13",
@@ -182,7 +193,8 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/bigMagic.jpg"
+        "image": "images/bigMagic.jpg",
+        "labels": ["Creative", "Self-help"]
     },
     {
         "id": "14",
@@ -195,6 +207,7 @@
         "availability": "Borrowed Out",
         "category": ["Motivational"],
         "shelf": "none",
-        "image": "images/effecTivePython.jpg"
+        "image": "images/effecTivePython.jpg",
+        "labels": ["Creative", "Self-help"]
     }
 ]

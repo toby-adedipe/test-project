@@ -129,10 +129,10 @@ mains{
 .active-link{
     color: #65C100;
 }
-#search-div{
+#search-div form{
     display: flex;
 }
-#search-div div{
+#search-div #search-icon{
     height: 2.5rem;
     width: 2.5rem;
     border:1px solid #DDDDDD;
@@ -147,6 +147,22 @@ mains{
     width: 40vw;
     border: 1px solid #DDDDDD;
     padding: 0 10px 0 10px;
+}
+#search-results{
+    width: 40vw;
+    position: fixed;
+    background-color: #fff;
+    font-size: .9rem;
+    padding: 0 10px 0 10px;
+}
+.rendered-search{
+    display: flex;
+}
+.rendered-search p{
+    margin: .5rem 0 .5rem .25rem;
+}
+.rendered-search span{
+    color: #919191;
 }
 /* Main page styles */
 #main-page{
@@ -174,10 +190,20 @@ mains{
     margin: 0 1rem 1rem 0;
 
 }
-.carousel-cell img{
+.carousel-cell .carousel-images{
     width:213px;
     height: 320px;
     box-shadow: 0 10px 6px -6px #777;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.carousel-background{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: rgb(84,84,84);
+    background: linear-gradient(180deg, rgba(84,84,84,.4) 0%, rgba(2,2,2,.9) 60%, rgba(0,0,0,1) .9%);
 }
 #recently-added, #all-books{
     display: grid;

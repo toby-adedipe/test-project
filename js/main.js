@@ -11,15 +11,17 @@
   })
 })(jQuery)
 
-// add class 'activeLink' to the current link in the browser
 const allLinks = document.querySelectorAll('a');
-// Set home link as default style
 const homeLink = document.querySelectorAll('a[href="/"]')
+const search = document.getElementById('search-input')
+const results = document.getElementById('search-results')
+const carousel = document.getElementById('carousel')
+
+// add class 'activeLink' to the current link in the browser
+// Set home link as default style
 homeLink.forEach(link=>{
   link.className += ' active-link'
 });
-
-
 // create a function to remove the styling from other links and add it to currentlink
 function clickLink(e){
   removeStyle();
@@ -39,18 +41,67 @@ async function getData(){
 
   return data
 }
-function renderCarousel (book, id){
+
+function renderCarousel (book){
   let html = ""
   var div = document.createElement('div')
   div.setAttribute("class", "carousel-cell")
+  
   html += `
-  <div>
-    <img src=${book.image} alt=${book.title}>
+  <div style="background-image: url(${book.image})" class="carousel-images">
+    <div class="carousel-background">
+      <p class=${book.availability === 'Available' 
+        ? "available-book"
+        : "unavailable-book"
+        }>
+          ${book.availability}
+      </p>
+      <div>
+        <p class="book-title">${book.title}</p>
+        <p>${book.authors.map(author=>(
+            `<span> ${author}</span>`
+          ))}
+        </p>
+        <p>
+          ${book.yearPublished}
+        </p>
+      </div>
+      <div>
+          <p>Genre: ${book.category.map(category=>(
+            `<span> ${category}</span>`
+          ))}
+          </p>
+          <p>Labels: ${book.labels.map(label=>(
+            `<span> ${label}</span>`
+          ))}
+      </div>
+        <div class="ratings-section">
+          <div class="ratings-section-ratings">
+            <p>Ratings: ${book.ratings}</p>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star empty" aria-hidden="true"></i>
+          </div>
+          <div class="ratings-section-likes">
+            <div>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <p>${book.readers}</p>
+            </div>
+            <div>
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              <p>${book.likes}</p>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
   `
   div.innerHTML = html
-  document.getElementById(id).appendChild(div)
+  carousel.appendChild(div)
 }
+
 function renderHTML (book, id){
   let html = ""
   let div = document.createElement('div')  
@@ -100,9 +151,50 @@ function renderHTML (book, id){
   div.innerHTML = html
   document.getElementById(id).appendChild(div)
 }
+  
 // Get the data JSON data and render it to the html page
 getData().then(data => {
-  data.filter(book=>book.id<8).forEach(book=>renderCarousel(book, "carousel")) // Rendering only 7 featured books for the carousel
+  data.filter(book=>book.id<8).forEach(book=>renderCarousel(book)) // Rendering only 7 featured books for the carousel
   data.filter(book=>book.id>=10).forEach(book=>renderHTML(book, "recently-added")) //Rendering the last 5 books to be added to the database
   data.forEach(book=>renderHTML(book, "all-books"))
 })
+
+//Autocomplete Feature
+
+const searchBooks = async searchInput =>{
+  const res = await fetch('../data/data.json');
+  const data = await res.json()
+
+  let matched = data.filter(book =>{
+    const regex = new RegExp(`${searchInput}`, 'gi')
+    return book.title.match(regex)
+  })
+
+  searchInput.length === 0
+  ? matched = []
+  : matched
+
+  renderSearchHtml(matched)
+
+}
+
+const renderSearchHtml = matches => {
+  results.innerHTML = ""
+  matches.forEach( book => {
+    let html = ""
+    let div = document.createElement('div')
+    div.setAttribute('class', 'rendered-search')  
+    html += `
+      <p>${book.title} </p>
+      <p>${book.authors.map(author=>(
+        `<span> - ${author}</span>`
+      ))}</p>
+    `;
+    div.innerHTML = html
+    results.appendChild(div)
+    console.log(html)
+  })
+
+}
+
+search.addEventListener('input', ()=> searchBooks(search.value))
