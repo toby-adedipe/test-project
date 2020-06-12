@@ -10,7 +10,7 @@
         "availability": "Available",
         "category": ["Motivational"],
         "shelf": "recentlyAdded",
-        "image": "images/theEffectiveEngineer.jpeg"
+        "image": "images/theEffectiveEngineer.jpg"
     },
     {
         "id": "1",
@@ -20,7 +20,7 @@
         "ratings": "4.0",
         "readers": "31",
         "likes": "29",
-        "availability": "Available",
+        "availability": "Borrowed Out",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "recentlyAdded",
         "image": "images/theLeanStartup.jpg"
@@ -86,7 +86,7 @@
         "ratings": "4.0",
         "readers": "31",
         "likes": "29",
-        "availability": "Available",
+        "availability": "Borrowed Out",
         "category": ["Business", "Entrepreneurship"],
         "shelf": "none",
         "image": "images/theLeanStartup.jpg"
@@ -192,7 +192,7 @@
         "ratings": "4.0",
         "readers": "31",
         "likes": "29",
-        "availability": "Available",
+        "availability": "Borrowed Out",
         "category": ["Motivational"],
         "shelf": "none",
         "image": "images/effecTivePython.jpg"

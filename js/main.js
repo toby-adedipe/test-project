@@ -1,3 +1,16 @@
+(function($){
+  $(document).ready(function(){
+    function carousel(){
+      $('.main-carousel').flickity({
+        // options
+        cellAlign: 'left',
+        contain: true
+      });
+    }
+    setTimeout(carousel, 1500)
+  })
+})(jQuery)
+
 // add class 'activeLink' to the current link in the browser
 const allLinks = document.querySelectorAll('a');
 // Set home link as default style
@@ -5,6 +18,8 @@ const homeLink = document.querySelectorAll('a[href="/"]')
 homeLink.forEach(link=>{
   link.className += ' active-link'
 });
+
+
 // create a function to remove the styling from other links and add it to currentlink
 function clickLink(e){
   removeStyle();
@@ -14,70 +29,80 @@ function clickLink(e){
 function removeStyle(){
   allLinks.forEach(link=> link.classList.remove('active-link'))
 }
-// add a clikc event to all the links on the page
+// add a click event to all the links on the page
 allLinks.forEach(link=> link.addEventListener('click', clickLink))
 
+//Async method to fetch data
 async function getData(){
   let response = await fetch('../data/data.json')
   let data = await response.json()
 
   return data
 }
-
-getData().then(data => {
+function renderCarousel (book, id){
   let html = ""
   var div = document.createElement('div')
-  // json.forEach(function (book){
-  //   html += "<p>"+ book.title + ""
-  // })
-  data.forEach(book=>{
-    html += `
-      <div class="all-books-section">
-        <div class="book-image">
-          <img src=${book.image} alt=${book.title}>
-        </div>
-        <div class="book-info">
-          <p>${book.availability}</p>
-          <p>${book.title}</p>
-          <p>${book.authors.map(category=>(
-            `<span>${category}</span>`
-          ))}
-          - ${book.yearPublished}</p>
-          <p>${book.category.map(category=>(
-            `<span>${category} </span>`
-          ))}
-          </p>
-          <p>${book.ratings}</p>
-          <p>${book.readers}</p>
-          <p>${book.likes}</p>
-      </div>
-    `;
-  })
+  div.setAttribute("class", "carousel-cell")
+  html += `
+  <div>
+    <img src=${book.image} alt=${book.title}>
+  </div>
+  `
   div.innerHTML = html
-  document.getElementById("all-books").appendChild(div)
+  document.getElementById(id).appendChild(div)
+}
+function renderHTML (book, id){
+  let html = ""
+  let div = document.createElement('div')  
+  html += `
+    <div class="all-books-section">
+      <div class="book-image">
+        <img src=${book.image} alt=${book.title}>
+      </div>
+      <div class="book-info">
+        <p class=${book.availability === 'Available' 
+          ? "available-book"
+          : "unavailable-book"
+        }>
+          ${book.availability}
+        </p>
+        <p class="book-title">${book.title}</p>
+        <p>${book.authors.map(author=>(
+          `<span> ${author}</span>`
+        ))}
+        - ${book.yearPublished}</p>
+        <p>${book.category.map(category=>(
+          `<span> ${category}</span>`
+        ))}
+        </p>
+        <div class="ratings-section">
+          <div class="ratings-section-ratings">
+            <p>Ratings: ${book.ratings}</p>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star empty" aria-hidden="true"></i>
+          </div>
+          <div class="ratings-section-likes">
+            <div>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <p>${book.readers}</p>
+            </div>
+            <div>
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              <p>${book.likes}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  `;
+  div.innerHTML = html
+  document.getElementById(id).appendChild(div)
+}
+// Get the data JSON data and render it to the html page
+getData().then(data => {
+  data.filter(book=>book.id<8).forEach(book=>renderCarousel(book, "carousel")) // Rendering only 7 featured books for the carousel
+  data.filter(book=>book.id>=10).forEach(book=>renderHTML(book, "recently-added")) //Rendering the last 5 books to be added to the database
+  data.forEach(book=>renderHTML(book, "all-books"))
 })
-
-
-    /*const json = JSON.parse(req.responseText);
-    let html = "";
-    // Add your code below this line
-    json.forEach(function(val){
-      const keys = Object.keys(val);
-      html += "<div class='cat'>";
-      keys.forEach(function(key){
-        html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
-      });
-      html += "</div><br>";
-    });
-
-    // Add your code above this line
-    document.getElementsByClassName('message')[0].innerHTML = html;
-    let html = "";
-        json.forEach(function(val) {
-          html += "<div class = 'cat'>";
-          // Add your code below this line
-          html += "<img src= '"+ val.imageLink + "'" + "alt= '" + val.altText + "'>";
-
-
-          // Add your code above this line
-          html += "</div><br>";*/
