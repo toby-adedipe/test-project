@@ -49,7 +49,7 @@ nav{
     border-bottom: 1px solid #eaeaea;
     background-color: rgba(255, 255, 255, 0.8);
     position: fixed;
-    z-index: 2;
+    z-index: 3;
 }
 #nav-left{
     display: flex;
@@ -86,7 +86,7 @@ nav{
     font-size: .75rem;
 }
 
-#side-bar{
+.menu{
     width: 20rem;
     height: Calc(100vh - 100px);
     box-shadow: 10px 0 30px -2px #52525213;
@@ -114,10 +114,10 @@ nav{
     font-weight: 900;
     margin: 1rem 0 2rem 0;
 }
-#side-bar ul{
+.menu ul{
     margin: 0 0 1rem 0;
 }
-#side-bar ul li{
+.menu ul li{
     margin: .5rem .5rem .5rem 0;
 }
 .notifications{
@@ -312,7 +312,6 @@ nav{
     #quidax-book, 
     #admin-title, 
     #search-input, 
-    #side-bar,
     #carousel-section > p{
         display: none;
     }
@@ -348,11 +347,14 @@ nav{
     }
 
     /* hamburger menu */
-    #side-bar{
+    
+    .menu{
     width: 18rem;
     height: 100vh;
     box-shadow: 10px 0 30px -2px #52525213;
     position: fixed;
+    top:0;
+    left:0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -362,16 +364,15 @@ nav{
     overflow: auto;
     visibility: hidden;
     }
-    #side-bar .menu{
-        position: relative;
-        top: 75px;
+    #side-bar-menu{
+        padding: 75px 0 0 0;
     }
     #side-bar #toggler{
         display: inline-block;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        z-index: 3;
+        z-index: 4;
         cursor: pointer;
         width: 50px;
         height: 40px;
@@ -382,7 +383,7 @@ nav{
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 2;
+        z-index: 3;
         background-color: rgba(255, 255, 255, 0.8);
         width: 40px;
         height: 40px;
@@ -435,12 +436,15 @@ nav{
 
     /* ROTATE ON HOVER WHEN CHECKED */
     #side-bar #toggler:checked:hover + .hamburger > div{
-        transform: scale(1.5)
+        transform: scale(1.2)
     }
 
     /* SHOW MENU */
-    #side-bar #toggler:checked ~ #sidebar{
-       visibility: visible; 
+    #side-bar #toggler:checked ~ .menu{
+       visibility: visible;
+    }
+    #side-bar #toggler:checked ~ #mobile-book-quidax{
+        visibility: hidden;
     }
     #mobile-logo{
         display: flex;
@@ -491,6 +495,7 @@ nav{
     }
     #nav-left{
         margin: 0 0 0 1.5rem;
+        padding-left: 70px;
     }
     #nav-left .hamburger{
         position: relative;

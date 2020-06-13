@@ -200,3 +200,12 @@ const renderSearchHtml = matches => {
 }
 
 search.addEventListener('input', ()=> searchBooks(search.value))
+
+// const hamburger = document.getElementById('hamburger')
+// const checkbox = document.getElementById('toggler')
+
+// hamburger.addEventListener('click', ()=> {
+//   console.log(checkbox.checked)
+//   checkbox.checked = true
+//   console.log(checkbox.checked)
+// })
