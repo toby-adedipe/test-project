@@ -79,14 +79,12 @@ nav{
 #nav-right img{
     width: 50%;
 }
+
 #admin-title{
     color: #B5B5B5;
     font-size: .75rem;
 }
-mains{
-    display: flex;
-    flex-direction: row;
-}
+
 #side-bar{
     width: 20rem;
     height: Calc(100vh - 100px);
@@ -97,13 +95,21 @@ mains{
     justify-content: space-between;
     margin: 100px 0 0 0;
     z-index: 2;
+    background-color: #fff;
+    overflow: auto;
 }
-#side-bar>div{
+#pages,
+#explore,
+#my-books,
+#admin-panel{
     border-bottom: 1px solid #eaeaea;
     padding: 0 2rem 0 2rem;
     font-size: .85rem;
 }
-#side-bar div p{
+#pages p,
+#explore p,
+#my-books p,
+#admin-panel p{
     font-weight: 900;
     margin: 1rem 0 2rem 0;
 }
@@ -188,12 +194,15 @@ mains{
 }
 .carousel-cell>div{
     margin: 0 1rem 1rem 0;
-
 }
-.carousel-cell .carousel-images{
+.carousel-cell{
     width:213px;
     height: 320px;
     box-shadow: 0 10px 6px -6px #777;
+}
+.carousel-images{
+    width: 100%;
+    height: 100%;
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -212,6 +221,7 @@ mains{
 .carousel-background>div, .carousel-background>p{
     margin: 0 0 20px 15px;
 }
+
 .carousel-images .carousel-background{
     visibility: hidden;
 }
@@ -280,4 +290,76 @@ mains{
 }
 .empty{
     color: #DDDDDD;
+}
+#mobile-logo{
+    display: none;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px){
+    /* components that should be hidden in mobile view */
+    #quidax-book, 
+    #admin-title, 
+    #search-input, 
+    #side-bar,
+    #carousel-section > p{
+        display: none;
+    }
+    nav{
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+        width: 100vw;
+        height: 80px;
+        border-bottom: 1px solid #eaeaea;
+        background-color:#fff;
+        position: fixed;
+        z-index: 2;
+    }
+    #main-page{
+        padding: 100px 0 0 0;
+        font-size: 1rem;
+    }
+    #carousel{
+        width: 100vw;
+    }
+    .carousel-cell{
+        max-width: 150px;
+        height: 225px;
+    }
+    .carousel-images{
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 10px 6px -6px #777;
+        background-position: center; 
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* hamburger menu */
+    #side-bar{
+    width: 18rem;
+    height: 100vh;
+    box-shadow: 10px 0 30px -2px #52525213;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    background-color: #fff;
+    margin: 0;
+    overflow: auto;
+    }
+    #mobile-logo{
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 2rem;
+    }
+    #mobile-quidax-book{
+        font-weight: bold;
+    }
+    #mobile-admin-title{
+        color: #B5B5B5;
+        font-size: .75rem;
+    }
 }

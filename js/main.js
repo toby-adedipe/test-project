@@ -83,16 +83,16 @@ function renderCarousel (book){
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
               <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star empty" aria-hidden="true"></i>
+              <i class="fa fa-star empty" aria-hidden="true" style="color: #333333"></i>
             </div>
           </div>
           <div class="ratings-section-likes">
             <div>
-              <i class="fa fa-users" aria-hidden="true"></i>
+              <i class="fa fa-users" aria-hidden="true" style="color: #999999"></i>
               <p>${book.readers}</p>
             </div>
             <div>
-              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              <i class="fa fa-heart-o" aria-hidden="true" style="color: #999999"></i>
               <p>${book.likes}</p>
             </div>
           </div>
