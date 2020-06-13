@@ -73,11 +73,12 @@ nav{
     width: 50%;
 }
 #nav-right{
-    width: 50px;
+    display: flex;
+    align-items: center;
     margin: 0 2rem 0 0;
 }
-#nav-right img{
-    width: 50%;
+#books-icon{
+    width: 25px;
 }
 
 #admin-title{
@@ -119,26 +120,38 @@ nav{
 #side-bar ul li{
     margin: .5rem .5rem .5rem 0;
 }
-#notifications{
+.notifications{
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
 }
-#notifications span{
+.notifications span{
+    font-size: .75rem;
+    color:#999999;
+}
+.notification-badges{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.notification-badges span{
     background-color: #65C100;
     width: 1.5rem;
     height: 1rem;
     border-radius: 0.75rem;
     color: #fff;
 }
+
+
 .active-link{
     color: #65C100;
 }
 #search-div form{
     display: flex;
 }
-#search-div #search-icon{
+#search-icon{
     height: 2.5rem;
     width: 2.5rem;
     border:1px solid #DDDDDD;
@@ -174,6 +187,7 @@ nav{
 #main-page{
     padding: 110px 0 0 20rem;
     font-size: .9rem;
+    margin-bottom: 2rem;
 }
 .section-headers{
     letter-spacing: 2px;
@@ -239,14 +253,11 @@ nav{
     margin: .5rem 1rem .5rem 0;
     width: 18rem;
     height: 150px;
+    transition: all 0.5s ease;
+
 }   
 .all-books-section:hover{
-    animation: hoverAnimation 1s ease-out alternate forwards;
-}
-@keyframes hoverAnimation{
-    100%{
-        box-shadow: 10px 10px 30px 10px #52525213;
-    }
+    box-shadow: 10px 10px 30px 10px #52525213;
 }
 
 
@@ -291,7 +302,7 @@ nav{
 .empty{
     color: #DDDDDD;
 }
-#mobile-logo{
+#mobile-logo, .mobile-icons, #toggler{
     display: none;
 }
 
@@ -306,9 +317,9 @@ nav{
         display: none;
     }
     nav{
-        /* display: flex;
-        justify-content: space-between;
-        align-items: center; */
+        display: flex;
+        justify-content: safe;
+        align-items: center;
         width: 100vw;
         height: 80px;
         border-bottom: 1px solid #eaeaea;
@@ -349,11 +360,92 @@ nav{
     background-color: #fff;
     margin: 0;
     overflow: auto;
+    visibility: hidden;
+    }
+    #side-bar .menu{
+        position: relative;
+        top: 75px;
+    }
+    #side-bar #toggler{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        cursor: pointer;
+        width: 50px;
+        height: 40px;
+        opacity: 0;
+        margin: 1rem 1.5rem;
+    }
+    #side-bar .hamburger{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 40px;
+        height: 40px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #side-bar .hamburger >div {
+        position: relative;
+        width: 80%;
+        height: 2px;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    /* TOP AND BOTTOM LINES */
+    #side-bar .hamburger >div:before,
+    #side-bar .hamburger >div:after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: -10px;
+        width: 50%;
+        height: 2px;
+        background: inherit;
+        transition: all 0.4s ease;
+    }
+    /* MOVES LINE DOWN */
+    #side-bar .hamburger >div:after{
+        top: 10px;
+    }
+
+    /* ANIMATE THE TOGGLER */
+    #side-bar #toggler:checked + .hamburger > div{
+        transform: rotate(0);
+    }
+    #side-bar #toggler:checked + .hamburger > div:before{
+        top: -6px;
+        transform: rotate(-45deg)
+    }
+    #side-bar #toggler:checked + .hamburger > div:after{
+        top: 6px;
+        transform: rotate(45deg);
+    }
+
+    /* ROTATE ON HOVER WHEN CHECKED */
+    #side-bar #toggler:checked:hover + .hamburger > div{
+        transform: scale(1.5)
+    }
+
+    /* SHOW MENU */
+    #side-bar #toggler:checked ~ #sidebar{
+       visibility: visible; 
     }
     #mobile-logo{
         display: flex;
         align-items: center;
-        margin: 0 0 0 2rem;
+        margin: 0 0 0 1.5rem;
     }
     #mobile-quidax-book{
         font-weight: bold;
@@ -361,5 +453,83 @@ nav{
     #mobile-admin-title{
         color: #B5B5B5;
         font-size: .75rem;
+    }
+    .section-headers{
+        letter-spacing: 2px;
+        margin: 2rem 1.5rem 1rem 1.5rem;
+        padding-bottom: 1rem;
+    }
+    #recently-added, #all-books {
+        margin: 0 1.5rem 0 1.5rem;
+    }
+    #search-icon{
+        height: 2.5rem;
+        width: 2.5rem;
+        border: 0;
+        background-color: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+    }
+    #nav-right{
+        display: flex;
+        align-items: center;
+        margin: 0 2rem 0 0;
+    }
+    .mobile-icons{
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 .5rem;
+        font-size: 1.25rem;
+    }
+    #avatar{
+        width: 50px;
+        border-radius: 50%;
+        box-shadow: 10px 0 30px -2px #52525213;
+        margin: 0 0 0 .5rem;
+    }
+    #nav-left{
+        margin: 0 0 0 1.5rem;
+    }
+    #nav-left .hamburger{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 40px;
+        height: 40px;
+        padding: 1rem 1rem 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav-left .hamburger >div {
+        position: relative;
+        width: 80%;
+        height: 2px;
+        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    /* TOP AND BOTTOM LINES */
+    #nav-left .hamburger >div:before,
+    #nav-left .hamburger >div:after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: -10px;
+        width: 50%;
+        height: 2px;
+        background: inherit;
+        transition: all 0.4s ease;
+    }
+    #nav-left .hamburger >div:after {
+        top: 10px;
     }
 }

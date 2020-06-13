@@ -12,6 +12,7 @@
 <body>
     <nav id="nav-bar">
         <div id="nav-left">
+            <div class="hamburger"><div></div></div>
             <div id="logo-container">
                 <img src="/images/books-outline.png" alt="" srcset="">       
             </div>
@@ -31,12 +32,17 @@
         </div>
         
         <div id="nav-right">
-            <img src="/images/books.png" alt="" srcset="">       
+            <img src="/images/books.png" alt="books-icon" id="books-icon">       
+            <div class="mobile-icons">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                <img src="/images/avatar.png" alt="avatar" id="avatar">
+            </div>
         </div>
+        
     </nav>
     <main>
         <section id="side-bar">
-            <input type="checkbox" class="toggler">
+            <input type="checkbox" id="toggler">
             <div class="hamburger"><div></div></div>
             <div class="menu">
                 <div id="side-bar-menu">
@@ -53,31 +59,31 @@
                         <ul>
                             <li><a href="/" class=" ">Home</a></li>
                             <li><a href="#" class=" ">Profile</a></li>
-                            <li id="notifications"><a href="#" class=" ">Notifications </a><span>3</span></li>
+                            <li class="notification-badges"><a href="#" class=" ">Notifications </a><span>3</span></li>
                         </ul>
                     </div>
                     <div id="explore">
                         <p>Explore</p>
                         <ul>
-                            <li>Books</li>
-                            <li>Genres</li>
-                            <li>Authors</li>
+                            <li class="notifications">Books<span>273</span></li>
+                            <li class="notifications">Genres<span>342</span></li>
+                            <li class="notifications">Authors<span>106</span></li>
                         </ul>
                     </div>
                     <div id="my-books">
                         <p>My Books</p>
                         <ul>
-                            <li>Queued</li>
-                            <li>Currently Borrowed</li>
-                            <li>Favorites</li>
+                            <li class="notifications">Queued<span>3</span></li>
+                            <li class="notifications">Currently Borrowed<span>0</span></li>
+                            <li class="notifications">Favorites<span>19</span></li>
                             <li>History</li>
                         </ul>
                     </div>
                     <div id="admin-panel">
                         <p>Admin</p>
                         <ul>
-                            <li>Book Requests</li>
-                            <li>Members</li>
+                            <li class="notification-badges">Book Requests<span>2</span></li>
+                            <li class="notifications">Members<span>34</span></li>
                             <li>Library Settings</li>
                         </ul>
                     </div>
@@ -93,7 +99,7 @@
                 </div>
             </section>
             <section class="books-section">
-                <p class="section-headers">RECENTLY ADDED</p>
+                <p class="section-headers" style="margin-top: 3rem;">RECENTLY ADDED</p>
                 <!-- render books here -->
                 <div id="recently-added">
 
