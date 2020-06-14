@@ -101,12 +101,16 @@ nav{
 }
 #pages,
 #explore,
-#my-books,
-#admin-panel{
+#my-books{
     border-bottom: 1px solid #eaeaea;
     padding: 0 2rem 0 2rem;
     font-size: .85rem;
 }
+
+#admin-panel{
+    padding: 0 2rem 0 2rem;
+    font-size: .85rem;
+}   
 #pages p,
 #explore p,
 #my-books p,
