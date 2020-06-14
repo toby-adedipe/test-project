@@ -16,6 +16,9 @@ const homeLink = document.querySelectorAll('a[href="/"]')
 const search = document.getElementById('search-input')
 const results = document.getElementById('search-results')
 const carousel = document.getElementById('carousel')
+const searchDiv = document.getElementById('search-div')
+const searchBtn = document.getElementById('mobile-search')
+const backBtn = document.getElementById('arrow-left')
 
 // add class 'activeLink' to the current link in the browser
 // Set home link as default style
@@ -202,5 +205,19 @@ const renderSearchHtml = matches => {
   })
 
 }
+// Toggle showing and hiding Search bar
+const showSearch = ()=>{
+  searchDiv.style.display = "flex";
+  document.getElementById('toggler').style.visibility="hidden";
+  document.getElementsByClassName('hamburger')[0].style.visibility="hidden";
+}
+const hideSearch = ()=>{
+  searchDiv.style.display = "none";
+  document.getElementById('toggler').style.visibility = "visible";
+  document.getElementsByClassName('hamburger')[0].style.visibility = "visible";
+}
+
 
 search.addEventListener('input', ()=> searchBooks(search.value))
+searchBtn.addEventListener('click', ()=>showSearch())
+backBtn.addEventListener('click', ()=>hideSearch())
