@@ -320,10 +320,52 @@ nav{
 #mobile-search,
 #toggler,
 .mobile-icons,
-.fa-arrow-left{
+.fa-arrow-left,
+.bell-badge p{
     display: none;
 }
-
+/* LOADER ANIMATION */
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+  }
+  .loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+  }
+  .loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+  }
+  @keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+  @keyframes loader-inner {
+    0% { height: 0%;}
+    25% { height: 0%;}
+    50% { height: 100%;}
+    75% { height: 100%;}
+    100% { height: 0%;}
+}
 /* MOBILE VIEW */
 @media (max-width: 600px){
     /* components that should be hidden in mobile view */
@@ -673,6 +715,7 @@ nav{
         height: 100%;
     }
     .bell-badge>p{
+        display: inline-block;
         font-size: .75rem;
         position: relative;
         top: -10px;

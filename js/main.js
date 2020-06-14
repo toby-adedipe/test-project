@@ -9,6 +9,9 @@
     }
     setTimeout(carousel, 1500)
   })
+  $(window).on("load", function(){
+    $(".loader-wrapper").fadeOut("slow");
+  })
 })(jQuery)
 
 const allLinks = document.querySelectorAll('a');
