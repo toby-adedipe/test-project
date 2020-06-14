@@ -62,25 +62,53 @@ nav{
 #logo-container{
     display: flex;
     background-color: #000;
-    width: 50px;
-    height: 50px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     margin: 0 .5rem 0 0;
 }
 #logo-container img{
-    width: 50%;
+    width: 1rem;
 }
 #nav-right{
+    width: 10%;
     display: flex;
     align-items: center;
     margin: 0 2rem 0 0;
+    justify-content: space-between;
 }
 #books-icon{
-    width: 25px;
+    width: 1rem;
+    height: 1rem;
 }
-
+.fa-bell-o, .fa-search{
+    font-size: 1rem;
+    
+}
+.fa-bell-o{
+    position: relative;
+    z-index: -2;
+}
+.fa-bell-o span{
+    font-size: .75rem;
+    font-weight: bold;
+    background-color: #65C100;
+    color: #fff;
+    padding:3px 6px;
+    border-radius: 50%;
+    position: relative;
+    top:-10px;
+    right: 10px;
+    z-index: 0;
+}
+#avatar{
+    display: flex;
+    width: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 10px 0 30px -2px #52525213;
+}
 #admin-title{
     color: #B5B5B5;
     font-size: .75rem;
@@ -106,7 +134,9 @@ nav{
     padding: 0 2rem 0 2rem;
     font-size: .85rem;
 }
-
+#pages ul{
+    margin: 1rem 0;
+}
 #admin-panel{
     padding: 0 2rem 0 2rem;
     font-size: .85rem;
@@ -151,6 +181,7 @@ nav{
 
 .active-link{
     color: #65C100;
+    font-weight: bold;
 }
 #search-div form>div{
     display: flex;
@@ -303,13 +334,20 @@ nav{
     margin: 1rem 0 0 0;
     display: flex;
 }
+
 .ratings-section-ratings{
     border-right: 1px solid #DDDDDD;
     padding: 0 .5rem 0 0
 }
+.ratings-section-ratings p{
+    padding-bottom: .25rem;;
+}
 .ratings-section-likes{
     display: flex;
     margin: 0 0 0 .5rem;
+}
+.ratings-section-likes p{
+    padding-top: .25rem;;
 }
 .ratings-section-likes div{
     margin: 0 .5rem 0 0;
@@ -320,12 +358,12 @@ nav{
 .empty{
     color: #DDDDDD;
 }
+
 #mobile-logo, 
 #mobile-search,
 #toggler,
-.mobile-icons,
-.fa-arrow-left,
-.bell-badge p{
+.fa-arrow-left
+{
     display: none;
 }
 /* LOADER ANIMATION */
@@ -587,7 +625,7 @@ nav{
         left: 0;
         width: 200vw;
         height: 200vh;
-        background-color: rgba(0,0,0,.8);
+        background-color: rgba(0,0,0,.4);
         z-index: 2;
         opacity: 0;
         transition: opacity .6s ease;
@@ -595,6 +633,10 @@ nav{
     }
     #side-bar-menu{
         padding: 75px 0 0 0;
+        height: 100%;
+    }
+    #pages ul{
+        margin: 2rem 0 1rem 0;
     }
     #side-bar #toggler{
         display: inline-block;
@@ -706,31 +748,15 @@ nav{
         align-items: center;
         width: 45%;
         justify-content: space-between;
-        margin: 0 2rem 0 0;
-        font-size: 1.25rem;
-        font-size: 1.25rem;
+        margin: 0 1.5rem 0 0;
+        font-size: 1rem;
     }
 
-    .fa-bell-o, #mobile-search{
+    #mobile-search{
         display: inline-block;
     }
-    .bell-badge{
-        display: flex;
-        height: 100%;
-    }
-    .bell-badge>p{
-        display: inline-block;
-        font-size: .75rem;
-        position: relative;
-        top: -10px;
-        right: 10px;
-        background-color: #65C100;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        text-align: center;
-        color: #fff;
-        font-weight: bold;
+    .fa-bell-o{
+        z-index:-2;
     }
     #mobile-search{
         cursor: pointer;
@@ -738,7 +764,7 @@ nav{
     }
     #avatar{
         display: flex;
-        width: 50px;
+        width: 40px;
         border-radius: 50%;
         box-shadow: 10px 0 30px -2px #52525213;
     }
