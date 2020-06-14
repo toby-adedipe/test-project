@@ -222,6 +222,18 @@ nav{
     background-size: cover;
 }
 .carousel-background{
+    width: 100%;
+    height: 100%;
+    display: fixed;
+}
+.carousel-background .info-toggler{
+    visibility: hidden;
+}
+.carousel-info{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -232,15 +244,16 @@ nav{
     background: rgb(84,84,84);
     background: linear-gradient(180deg, rgba(84,84,84,.4) 0%, rgba(2,2,2,.9) 60%, rgba(0,0,0,1) .9%);
 }
-.carousel-background>div, .carousel-background>p{
-    margin: 0 0 20px 15px;
+.carousel-info>div, .carousel-info>p{
+    margin: 0 0 1.5rem 1rem;
 }
 
-.carousel-images .carousel-background{
-    visibility: hidden;
+.carousel-images .carousel-info{
+    opacity: 0;
+    transition: all .4s ease;
 }
-.carousel-images:hover .carousel-background{
-    visibility: visible;
+.carousel-images:hover .carousel-info{
+    opacity: 1;
 }
 
 #recently-added, #all-books{
@@ -345,6 +358,109 @@ nav{
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .carousel-info>div, .carousel-info>p{
+        margin: 0 0 .75rem .5rem;
+        font-size: .65rem;
+    }
+    /* TOGGLE CAROUSEL INFORMATION  */
+
+    
+    .carousel-background .info-toggler{
+        display: inline-block;
+        position: absolute;
+        top: 8%;
+        left: 70%;
+        z-index: 4;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        opacity: 0;
+        visibility: visible;
+    }
+    .carousel-background .toggle-info{
+        position: absolute;
+        top: 8%;
+        left: 70%;
+        z-index: 3;
+        background-color: #fff;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-background .toggle-info >div {
+        position: relative;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    /* TOP AND BOTTOM dots */
+    .carousel-background .toggle-info>div:before,
+    .carousel-background .toggle-info>div:after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: -8px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: inherit;
+        transition: all 0.4s ease;
+    }
+    /* MOVES dot DOWN */
+    .carousel-background .toggle-info>div:after{
+        top: 8px;
+    }
+
+    .carousel-info{
+        visibility: hidden;
+    }
+    .carousel-info p, .carousel-info div{
+        opacity: 0;
+    }
+
+    /* ANIMATE THE TOGGLER */
+    .carousel-background .info-toggler:checked + .toggle-info > div{
+        transform: rotate(0);
+    }
+    .carousel-background .info-toggler:checked + .toggle-info > div:before,
+    .carousel-background .info-toggler:checked + .toggle-info > div:after{
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 1.5px;
+        border-radius: 0;
+        transform: rotate(-90deg);
+    }
+    .carousel-background .info-toggler:checked + .toggle-info > div{
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 1.5px;
+        border-radius: 0;
+        transform: rotate(135deg);
+    }
+
+    /* SHOW INFO */
+    .carousel-background .info-toggler:checked ~ .carousel-info{
+        visibility: visible;
+    }
+
+    .carousel-background .info-toggler:checked ~ .carousel-info p,
+    .carousel-background .info-toggler:checked ~ .carousel-info div{
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+    
 
     /* hamburger menu */
     
@@ -434,7 +550,7 @@ nav{
         transform: rotate(45deg);
     }
 
-    /* ROTATE ON HOVER WHEN CHECKED */
+    /* EXPAND ON HOVER WHEN CHECKED */
     #side-bar #toggler:checked:hover + .hamburger > div{
         transform: scale(1.2)
     }
@@ -443,9 +559,8 @@ nav{
     #side-bar #toggler:checked ~ .menu{
        visibility: visible;
     }
-    #side-bar #toggler:checked ~ #mobile-book-quidax{
-        visibility: hidden;
-    }
+
+
     #mobile-logo{
         display: flex;
         align-items: center;
@@ -493,6 +608,7 @@ nav{
         box-shadow: 10px 0 30px -2px #52525213;
         margin: 0 0 0 .5rem;
     }
+
     #nav-left{
         margin: 0 0 0 1.5rem;
         padding-left: 70px;

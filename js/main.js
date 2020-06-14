@@ -50,53 +50,57 @@ function renderCarousel (book){
   html += `
   <div style="background-image: url(${book.image})" class="carousel-images">
     <div class="carousel-background">
-      <p class=${book.availability === 'Available' 
-        ? "available-book"
-        : "unavailable-book"
-        }>
-          ${book.availability}
-      </p>
-      <div>
-        <p class="book-title">${book.title}</p>
-        <p>${book.authors.map(author=>(
-            `<span> ${author}</span>`
-          ))}
+      <input type="checkbox" class="info-toggler">
+      <div class="toggle-info"><div></div></div>
+      <div class="carousel-info">
+        <p class=${book.availability === 'Available' 
+          ? "available-book"
+          : "unavailable-book"
+          }>
+            ${book.availability}
         </p>
-        <p>
-          ${book.yearPublished}
-        </p>
-      </div>
-      <div>
-          <p>Genre: ${book.category.map(category=>(
-            `<span> ${category}</span>`
-          ))}
+        <div>
+          <p class="book-title">${book.title}</p>
+          <p>${book.authors.map(author=>(
+              `<span> ${author}</span>`
+            ))}
           </p>
-          <p>Labels: ${book.labels.map(label=>(
-            `<span> ${label}</span>`
-          ))}
-      </div>
-        <div class="ratings-section">
-          <div class="ratings-section-ratings">
-            <p>Ratings: ${book.ratings}</p>
-            <div>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star empty" aria-hidden="true" style="color: #333333"></i>
-            </div>
-          </div>
-          <div class="ratings-section-likes">
-            <div>
-              <i class="fa fa-users" aria-hidden="true" style="color: #999999"></i>
-              <p>${book.readers}</p>
-            </div>
-            <div>
-              <i class="fa fa-heart-o" aria-hidden="true" style="color: #999999"></i>
-              <p>${book.likes}</p>
-            </div>
-          </div>
+          <p>
+            ${book.yearPublished}
+          </p>
         </div>
+        <div>
+            <p>Genre: ${book.category.map(category=>(
+              `<span> ${category}</span>`
+            ))}
+            </p>
+            <p>Labels: ${book.labels.map(label=>(
+              `<span> ${label}</span>`
+            ))}
+        </div>
+          <div class="ratings-section">
+            <div class="ratings-section-ratings">
+              <p>Ratings: ${book.ratings}</p>
+              <div>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star empty" aria-hidden="true" style="color: #333333"></i>
+              </div>
+            </div>
+            <div class="ratings-section-likes">
+              <div>
+                <i class="fa fa-users" aria-hidden="true" style="color: #999999"></i>
+                <p>${book.readers}</p>
+              </div>
+              <div>
+                <i class="fa fa-heart-o" aria-hidden="true" style="color: #999999"></i>
+                <p>${book.likes}</p>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
   `
@@ -200,12 +204,3 @@ const renderSearchHtml = matches => {
 }
 
 search.addEventListener('input', ()=> searchBooks(search.value))
-
-// const hamburger = document.getElementById('hamburger')
-// const checkbox = document.getElementById('toggler')
-
-// hamburger.addEventListener('click', ()=> {
-//   console.log(checkbox.checked)
-//   checkbox.checked = true
-//   console.log(checkbox.checked)
-// })
