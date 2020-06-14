@@ -329,8 +329,6 @@ nav{
     /* components that should be hidden in mobile view */
     #quidax-book, 
     #admin-title, 
-    /* #search-input,  */
-    /* #search-icon, */
     #carousel-section > p{
         display: none;
     }
@@ -374,6 +372,7 @@ nav{
     .fa-arrow-left{
         display: inline-block;
         font-size: 1.5rem;
+        cursor: pointer;
     }
     #search-results{
         width: 50vw;
@@ -546,6 +545,7 @@ nav{
         z-index: 2;
         opacity: 0;
         transition: opacity .6s ease;
+        visibility: hidden;
     }
     #side-bar-menu{
         padding: 75px 0 0 0;
@@ -629,6 +629,7 @@ nav{
     }
     #side-bar #toggler:checked ~ .overlay{
         opacity: 1;
+        visibility: visible;
         transition: opacity .6s ease;
     }
 
@@ -666,6 +667,27 @@ nav{
 
     .fa-bell-o, #mobile-search{
         display: inline-block;
+    }
+    .bell-badge{
+        display: flex;
+        height: 100%;
+    }
+    .bell-badge>p{
+        font-size: .75rem;
+        position: relative;
+        top: -10px;
+        right: 10px;
+        background-color: #65C100;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+    }
+    #mobile-search{
+        cursor: pointer;
+        vertical-align: middle;
     }
     #avatar{
         display: flex;
