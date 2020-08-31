@@ -14,6 +14,7 @@
   })
 })(jQuery)
 
+//getting all the needed html elements
 const allLinks = document.querySelectorAll('a');
 const homeLink = document.querySelectorAll('a[href="/"]')
 const search = document.getElementById('search-input')
@@ -22,9 +23,10 @@ const carousel = document.getElementById('carousel')
 const searchDiv = document.getElementById('search-div')
 const searchBtn = document.getElementById('mobile-search')
 const backBtn = document.getElementById('arrow-left')
+const toggler = document.getElementById('toggler')
+const hamburger = document.getElementsByClassName('hamburger')[0]
 
-// add class 'activeLink' to the current link in the browser
-// Set home link as default style
+//function to set and change the active link in the sidebar
 homeLink.forEach(link=>{
   link.className += ' active-link'
 });
@@ -48,6 +50,7 @@ async function getData(){
   return data
 }
 
+//abstracted function to render the html for the carousel
 function renderCarousel (book){
   let html = ""
   var div = document.createElement('div')
@@ -114,6 +117,7 @@ function renderCarousel (book){
   carousel.appendChild(div)
 }
 
+//Function to render the html for the main page(all books and recent books)
 function renderHTML (book, id){
   let html = ""
   let div = document.createElement('div')  
@@ -172,7 +176,6 @@ getData().then(data => {
 })
 
 //Autocomplete Feature
-
 const searchBooks = async searchInput =>{
   const res = await fetch('../data/data.json');
   const data = await res.json()
@@ -208,16 +211,17 @@ const renderSearchHtml = matches => {
   })
 
 }
+
 // Toggle showing and hiding Search bar
 const showSearch = ()=>{
   searchDiv.style.display = "flex";
-  document.getElementById('toggler').style.visibility="hidden";
-  document.getElementsByClassName('hamburger')[0].style.visibility="hidden";
+  toggler.style.visibility="hidden";
+  hamburger.style.visibility="hidden";
 }
 const hideSearch = ()=>{
   searchDiv.style.display = "none";
-  document.getElementById('toggler').style.visibility = "visible";
-  document.getElementsByClassName('hamburger')[0].style.visibility = "visible";
+  toggler.style.visibility = "visible";
+  hamburger.style.visibility = "visible";
 }
 
 
